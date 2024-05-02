@@ -31,6 +31,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 300ms ease-in;
 }
 .btn img {
   width: 20px;
@@ -39,6 +40,14 @@ a {
 .btn.dark-btn {
   background: #00a79d;
   color: #fff;
+}
+.btn.light-btn {
+  background: #fff;
+  color: #00a79d;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /*--------------- Media Query ---------*/
@@ -49,5 +58,12 @@ a {
   }
   .btn {
     padding: 14px 22px;
+  }
+}
+@media (max-width: 860px) {
+  .btn {
+    padding: 12px 22px;
+    font-size: 14px;
+    border-radius: 26px;
   }
 }

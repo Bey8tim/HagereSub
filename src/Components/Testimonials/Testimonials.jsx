@@ -40,7 +40,7 @@ const Testimonials = () => {
               <div className="user-info">
                 <img src={user_1} alt="" />
                 <div>
-                  <h3>Ato Temesgen Retebo</h3>
+                  <h3>Mr Temesgen R.</h3>
                   <span>Owner of TRIF, Addis Ababa</span>
                 </div>
               </div>
@@ -71,8 +71,8 @@ const Testimonials = () => {
               <div className="user-info">
                 <img src={user_3} alt="" />
                 <div>
-                  <h3>Dr Tegene </h3>
-                  <span>Hiwot Hospital, Hossana</span>
+                  <h3>Dr Tegene H. </h3>
+                  <span>General Manager of Hiwot Hospital, Hossana</span>
                 </div>
               </div>
               <p>
@@ -87,8 +87,10 @@ const Testimonials = () => {
               <div className="user-info">
                 <img src={user_4} alt="" />
                 <div>
-                  <h3>Mrs Alade </h3>
-                  <span>Hospital, Dire Dawa</span>
+                  <h3>Mrs Alade R. </h3>
+                  <span>
+                    General Manager of Art General Hospital, Dire Dawa
+                  </span>
                 </div>
               </div>
               <p>

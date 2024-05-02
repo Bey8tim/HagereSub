@@ -40,6 +40,7 @@
   margin-bottom: 10px;
 }
 .service:hover .caption {
+  scale: 1.025;
   opacity: 1.5;
   padding-top: 0;
 }

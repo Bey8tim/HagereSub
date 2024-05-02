@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
 import about_img from "../../assets/about.png";
+import { Link } from "react-scroll";
 
 const About = () => {
   return (
@@ -9,7 +10,7 @@ const About = () => {
         <img src={about_img} alt="" className="about-img" />
       </div>
       <div className="about-right">
-        <h3>About HagereSub</h3>
+        <h3>HagereSub</h3>
         <h2>
           One of the best in Property Management, Property Valuation and
           Consultancy Services.
@@ -32,6 +33,11 @@ const About = () => {
           national legal, developmental, social, economic and financial
           transaction needs.
         </p>
+        <button className="btn dark-btn">
+          <Link to="contact" smooth={true} offset={-150} duration={500}>
+            Contact Us
+          </Link>
+        </button>
       </div>
     </div>
   );

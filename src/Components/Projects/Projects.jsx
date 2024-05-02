@@ -1,25 +1,42 @@
 import React from "react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
 import "./Projects.css";
-import gallery_1 from "../../assets/gallery-1.png";
-import gallery_2 from "../../assets/gallery-2.png";
-import gallery_3 from "../../assets/gallery-3.png";
-import gallery_4 from "../../assets/gallery-4.png";
-import white_arrow from "../../assets/white-arrow.png";
-import { Link } from "react-scroll";
+import data from "../../utils/slider.json";
+import { sliderSettings } from "../../utils/common";
+
 const Projects = () => {
   return (
-    <div className="projects">
-      <div className="gallery">
-        <img src={gallery_1} alt="" />
-        <img src={gallery_2} alt="" />
-        <img src={gallery_3} alt="" />
-        <img src={gallery_4} alt="" />
+    <section className="projects r-wrapper">
+      <div className="paddings innerWidth r-container">
+        <div className="r-head flexColStart"></div>
+        {/*Sliding swiper*/}
+        <Swiper {...sliderSettings}>
+          <SliderButtons />
+          {data.map((card, i) => (
+            <SwiperSlide key={i}>
+              <div className="flexColStart r-card">
+                <img src={card.image} alt="home" />
+                <span className="secondaryText r-location">
+                  <span>{card.location}</span>
+                </span>
+                <span className="primaryText">{card.name}</span>
+                <span className="pText">{card.detail}</span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-      <button className="btn dark-btn">
-        <Link to="about" smooth={true} offset={-150} duration={500}>
-          See More Here <img src={white_arrow} alt="" />
-        </Link>
-      </button>
+    </section>
+  );
+};
+
+const SliderButtons = () => {
+  const swiper = useSwiper();
+  return (
+    <div className="flexCenter r-buttons">
+      <button onClick={() => swiper.slidePrev()}>&lt;</button>
+      <button onClick={() => swiper.slideNext()}>&gt;</button>
     </div>
   );
 };

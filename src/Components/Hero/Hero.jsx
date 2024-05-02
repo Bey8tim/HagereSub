@@ -1,31 +1,75 @@
 import React from "react";
 import "./Hero.css";
-import dark_arrow from "../../assets/dark-arrow.png";
+import { HiLocationMarker } from "react-icons/hi";
+import CountUp from "react-countup";
 import { Link } from "react-scroll";
 
-const Hero = () => {
+function Hero() {
   return (
-    <div className="hero container">
-      <div className="hero-text">
-        <h1>
-          We provide comprehensive professional service package in the field of
-          Property Management, Property Valuation and Consultancy Services in
-          Ethiopia.
-        </h1>
-        <p>
-          HagereSeb is working in all undertakings to earn client’s business by
-          exceeding their expectations through integrity, diligence,
-          professionalism, technology and communication. In addition, provide
-          them with solutions to not only meet their needs but to exceed them.
-        </p>
-        <button className="btn">
-          <Link to="about" smooth={true} offset={-150} duration={500}>
-            Explore More <img src={dark_arrow} alt="" />
-          </Link>
-        </button>
-      </div>
+    <div className="hero">
+      <section className=" hero-wrapper">
+        <div className="paddings innerWidth flexCenter hero-container">
+          {/* left side*/}
+          <div className="flexColStart hero-left">
+            <div className="hero-title">
+              <div className="orange-circle" />
+
+              <h1>
+                Discover <br /> How much you'r
+                <br />
+                Property Value
+              </h1>
+            </div>
+            <div className="flexColStart  hero-des">
+              <span className="secondaryText">
+                We provide comprehensive professional service package in the
+                field of
+              </span>
+              <span className="secondaryText">
+                Property Management, Property Valuation and Consultancy
+                Services.
+              </span>
+            </div>
+
+            <div className="flexCenter stats">
+              <div className="flexColCenter1 stat">
+                <span>
+                  <CountUp start={8200} end={8600} duration={4} />
+                  <span>+</span>
+                </span>
+                <span className="secondaryText">Properties Valuated </span>
+              </div>
+              <div className="flexColCenter1 stat">
+                <span>
+                  <CountUp start={50} end={110} duration={4} />
+                  <span>+</span>
+                </span>
+                <span className="secondaryText">Happy Customers </span>
+              </div>
+              <div className="flexColCenter1 stat">
+                <span>
+                  <CountUp end={19} />
+                  <span>+</span>
+                </span>
+                <span className="secondaryText">Companies </span>
+              </div>
+            </div>
+            <button className="btn light-btn">
+              <Link to="about" smooth={true} offset={-150} duration={500}>
+                Explore More
+              </Link>
+            </button>
+          </div>
+          {/* right side*/}
+          <div className="flexCenter hero-right">
+            <div className="image-container">
+              <img src="./hero.png " alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
-};
+}
 
 export default Hero;
